@@ -1,0 +1,19 @@
+# Python
+__pycache__/
+*.py[cod]
+.pytest_cache/
+
+# Django runtime artifact: the default (unused) sqlite DATABASES setting in
+# settings.py creates this file at startup even though the app persists
+# everything to MongoDB.
+src/rest/mydatabase
+
+# MongoDB data files (bind-mounted by docker-compose) — runtime state, never commit
+src/db/
+src/tmp/
+
+# Guard: a stray db/ reappears if ADBREW_CODEBASE_PATH is ever set wrong
+db/
+
+# Local env
+.env

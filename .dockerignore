@@ -1,0 +1,6 @@
+# added this file cause the below things are redundant
+.git
+src/app/node_modules
+src/db
+**/__pycache__
+*.py[cod]
