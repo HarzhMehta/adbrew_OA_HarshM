@@ -15,5 +15,8 @@ src/tmp/
 # Guard: a stray db/ reappears if ADBREW_CODEBASE_PATH is ever set wrong
 db/
 
+# Frontend tooling caches
+.eslintcache
+
 # Local env
 .env
