@@ -8,14 +8,20 @@ export function App() {
 
   return (
     <div className="App">
-      <div>
-        <h1>List of TODOs</h1>
-        <TodoList todos={todos} isLoading={isLoading} error={error} onRetry={() => refresh()} />
-      </div>
-      <div>
-        <h1>Create a ToDo</h1>
-        <TodoForm onSubmit={addTodo} />
-      </div>
+      <header className="app-header">
+        <h1>TODOs</h1>
+      
+      </header>
+      <main>
+        <section className="card">
+          <h2>Your TODOs</h2>
+          <TodoList todos={todos} isLoading={isLoading} error={error} onRetry={() => refresh()} />
+        </section>
+        <section className="card">
+          <h2>Add a TODO</h2>
+          <TodoForm onSubmit={addTodo} />
+        </section>
+      </main>
     </div>
   );
 }

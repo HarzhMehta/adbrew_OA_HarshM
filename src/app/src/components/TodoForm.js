@@ -25,8 +25,10 @@ export function TodoForm({ onSubmit }) {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div>
-        <label htmlFor="todo">ToDo: </label>
+      <div className="form-row">
+        <label className="sr-only" htmlFor="todo">
+          ToDo
+        </label>
         <input
           id="todo"
           type="text"
@@ -34,17 +36,15 @@ export function TodoForm({ onSubmit }) {
           onChange={(event) => setDescription(event.target.value)}
           placeholder="What needs to be done?"
         />
+        <button type="submit" className="btn btn-primary" disabled={!canSubmit}>
+          {isSubmitting ? "Adding..." : "Add"}
+        </button>
       </div>
       {error && (
         <p role="alert" className="form-error">
           {error}
         </p>
       )}
-      <div style={{ marginTop: "5px" }}>
-        <button type="submit" disabled={!canSubmit}>
-          {isSubmitting ? "Adding..." : "Add ToDo!"}
-        </button>
-      </div>
     </form>
   );
 }
